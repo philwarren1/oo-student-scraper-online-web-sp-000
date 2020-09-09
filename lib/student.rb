@@ -9,13 +9,12 @@ class Student
     self.send("name=", student_hash[:name])
     #@location = student_hash[:location]
     self.send("location=", student_hash[:location])
-    #@profile_url = student_hash[:profile_url]
     self.send("profile_url=", student_hash[:profile_url])
     @@all << self
   end
 
   def self.create_from_collection(students_array)
-     students_array.each do |student_hash| #each student is a hash
+     students_array.each do |student_hash| 
       Student.new(student_hash)
     end
   end
